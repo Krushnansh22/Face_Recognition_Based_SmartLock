@@ -35,7 +35,6 @@ def predict_faces(face_recognizer, label_dict, threshold=80):
         _, img = cap.read()
         grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = detector.detectMultiScale(grey, 1.1, 4)
-
         cv2.putText(img, "L : Lock/Unlock", (20, 450), 1, 2, (0, 0, 255), 2)
 
         for (x, y, w, h) in faces:
