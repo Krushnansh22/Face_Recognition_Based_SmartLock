@@ -2,6 +2,7 @@ import cv2
 import pickle
 import time
 import AddToExcel
+
 def load_model(model_path):
     # Load the trained face recognizer model
     face_recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -45,7 +46,8 @@ def predict_faces(face_recognizer, label_dict, threshold=80):
             if cv2.waitKey(1) == ord('u'):
                 if label == "unknown":
                     display_text = "Unauthorised Personnel"
-                    AddToExcel.unauthorized_unlock('unauth.xlsx',img)
+                    # Record Unauthorised access attempts
+                    AddToExcel.unauthorized_unlock('unauthaurised.xlsx',img)
                 else:
                     display_text = "Unlocked"
                 text_start_time = time.time()
