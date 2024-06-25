@@ -9,7 +9,7 @@ name = input("Enter name - ")
 while True:
     _, img = cap.read()
     grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces = detector.detectMultiScale(grey, 1.1, 4)  # Adjust scaleFactor and minNeighbors for better results
+    faces = detector.detectMultiScale(grey, 1.1, 6)  # Adjust scaleFactor and minNeighbors for better results
 
     for x, y, w, h in faces:
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
@@ -17,7 +17,6 @@ while True:
         cv2.putText(img, "S : Save", (20, 400), 0, 1.5, (255, 0, 0), 2)
         cv2.putText(img, "Q : Quit", (20, 450), 0, 1.5, (255, 0, 0), 2)
         cv2.imshow("Capture Data", img)
-        cv2.imshow("Capture Data - Cropped", cropped)
 
         if cv2.waitKey(1) == ord('s'):
             if not os.path.exists('data'):
@@ -30,7 +29,7 @@ while True:
 
         break  # Ensure only one detection at a time
 
-    if cv2.waitKey(1) == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 cap.release()
