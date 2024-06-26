@@ -50,5 +50,5 @@ This project implements a face recognition-based smart lock system using Python.
     ```
 
 2. If an unauthorized person attempts to unlock, their image and the attempt details will be saved in the `unauthorized.xlsx` file.
-
+3. hello
 
