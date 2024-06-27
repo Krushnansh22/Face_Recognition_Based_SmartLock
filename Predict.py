@@ -4,8 +4,10 @@ import pickle
 import time
 import AddToExcel
 
-
 # Flag to check current status
+locked_status = True
+current_status = "Locked"
+
 
 def load_model(model_path):
     # Load the trained face recognizer model
@@ -79,11 +81,10 @@ def predict_faces(face_recognizer, label_dict, threshold=80):
     cap.release()
     cv2.destroyAllWindows()
 
+# run this function
+def make_predictions(model_path):
+    global locked_status, current_status
 
-if __name__ == "__main__":
-    locked_status = True
-    current_status = "Locked"
-    face_recognizer = load_model('face_recognizer_model.xml')
+    face_recognizer = load_model(model_path)
     label_dict = load_label_dict('label_dict.pkl')
-
     predict_faces(face_recognizer, label_dict)
