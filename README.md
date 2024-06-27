@@ -37,6 +37,14 @@ This project implements a face recognition-based smart lock system using Python.
     python DataCollection.py
     ```
 
+### Training the Model
+
+1. After collecting the data, run the `train.py` script to train the face recognition model. This script will read the collected images, train a face recognizer, and save the model and label dictionary.
+
+    ```sh
+    python train.py
+    ```
+
 ### Adding Unauthorized Unlock Attempts to Excel
 
 1. The `AddToExcel.py` script contains the `unauthorized_unlock` function which saves the unauthorized attempt details to an Excel file. This function is called automatically during the prediction phase if an unauthorized access attempt is detected.
@@ -50,5 +58,24 @@ This project implements a face recognition-based smart lock system using Python.
     ```
 
 2. If an unauthorized person attempts to unlock, their image and the attempt details will be saved in the `unauthorized.xlsx` file.
-3. hello
+
+## Files
+
+- `DataCollection.py`: Script for collecting training data.
+- `train.py`: Script for training the face recognition model.
+- `AddToExcel.py`: Script for recording unauthorized access attempts.
+- `Predict.py`: Script for running the face recognition and smart lock system.
+
+## Model and Labels
+
+- Ensure you have the trained face recognition model (`face_recognizer_model.xml`) and the label dictionary (`label_dict.pkl`) in the same directory as the scripts before running the prediction script.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- OpenCV for computer vision functionalities.
+- Openpyxl for handling Excel files.
 
