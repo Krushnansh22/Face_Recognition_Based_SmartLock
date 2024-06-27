@@ -18,13 +18,13 @@ This project implements a face recognition-based smart lock system using Python.
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/face-recognition-smart-lock.git
-    cd face-recognition-smart-lock
+    https://github.com/Krushnansh22/Face_Recognition_Based_SmartLock.git
+    cd Face_Recognition_Based_SmartLock
     ```
 
 2. Install the required packages:
     ```sh
-    pip install opencv-python opencv-python-headless openpyxl
+    pip install opencv-contrib-python openpyxl 
     ```
 
 ## Usage
