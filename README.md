@@ -29,20 +29,14 @@ This project implements a face recognition-based smart lock system using Python.
 
 ## Usage
 
-### Data Collection
+### Data Collection & Training
 
 1. To collect data for training the face recognition model, run the `DataCollection.py` script. This script will capture images from your webcam and save them in the specified directory.
 
-    ```sh
+2. After collecting the data, the script trains the face recognition model. This script will read the collected images, train a face recognizer, and save the model and label dictionary.
+  
+   ```sh
     python DataCollection.py
-    ```
-
-### Training the Model
-
-1. After collecting the data, run the `train.py` script to train the face recognition model. This script will read the collected images, train a face recognizer, and save the model and label dictionary.
-
-    ```sh
-    python train.py
     ```
 
 ### Adding Unauthorized Unlock Attempts to Excel
@@ -61,8 +55,7 @@ This project implements a face recognition-based smart lock system using Python.
 
 ## Files
 
-- `DataCollection.py`: Script for collecting training data.
-- `train.py`: Script for training the face recognition model.
+- `DataCollection.py`: Script for collecting training data and training the model.
 - `AddToExcel.py`: Script for recording unauthorized access attempts.
 - `Predict.py`: Script for running the face recognition and smart lock system.
 
